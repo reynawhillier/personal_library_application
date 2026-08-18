@@ -7,6 +7,54 @@
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 import { DateTime } from 'luxon'
 
+export class BookSchema extends BaseModel {
+  static $columns = ['author', 'borrowedBy', 'createdAt', 'genre', 'id', 'imgAddress', 'isbn', 'ownerId', 'pageCount', 'readStatus', 'title', 'type', 'updatedAt'] as const
+  $columns = BookSchema.$columns
+  @column()
+  declare author: string
+  @column()
+  declare borrowedBy: number | null
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime | null
+  @column()
+  declare genre: string | null
+  @column({ isPrimary: true })
+  declare id: number
+  @column()
+  declare imgAddress: string | null
+  @column()
+  declare isbn: number | null
+  @column()
+  declare ownerId: number | null
+  @column()
+  declare pageCount: number | null
+  @column()
+  declare readStatus: number
+  @column()
+  declare title: string
+  @column()
+  declare type: number | null
+  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  declare updatedAt: DateTime | null
+}
+
+export class BorrowerSchema extends BaseModel {
+  static $columns = ['address', 'createdAt', 'fullName', 'id', 'librarianId', 'updatedAt'] as const
+  $columns = BorrowerSchema.$columns
+  @column()
+  declare address: string
+  @column.dateTime({ autoCreate: true })
+  declare createdAt: DateTime | null
+  @column()
+  declare fullName: string
+  @column({ isPrimary: true })
+  declare id: number
+  @column()
+  declare librarianId: number
+  @column.dateTime({ autoCreate: true, autoUpdate: true })
+  declare updatedAt: DateTime | null
+}
+
 export class RoleSchema extends BaseModel {
   static $columns = ['createdAt', 'id', 'name', 'updatedAt'] as const
   $columns = RoleSchema.$columns
@@ -21,7 +69,7 @@ export class RoleSchema extends BaseModel {
 }
 
 export class UserSchema extends BaseModel {
-  static $columns = ['createdAt', 'email', 'fullName', 'id', 'password', 'updatedAt'] as const
+  static $columns = ['createdAt', 'email', 'fullName', 'id', 'password', 'roleId', 'updatedAt'] as const
   $columns = UserSchema.$columns
   @column.dateTime({ autoCreate: true })
   declare createdAt: DateTime
@@ -33,6 +81,8 @@ export class UserSchema extends BaseModel {
   declare id: number
   @column({ serializeAs: null })
   declare password: string
+  @column()
+  declare roleId: number
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   declare updatedAt: DateTime | null
 }
