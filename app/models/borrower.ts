@@ -8,6 +8,9 @@ export default class Borrower extends BorrowerSchema {
   @hasMany(() => Book)
   declare borrowedBooks: HasMany<typeof Book>
 
-  @belongsTo(() => User)
+  @belongsTo(() => User, {
+    foreignKey: 'librarianId',
+    localKey: 'id',
+  })
   declare librarian: BelongsTo<typeof User>
 }

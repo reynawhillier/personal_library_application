@@ -5,9 +5,15 @@ import type { BelongsTo } from '@adonisjs/lucid/types/relations'
 import Borrower from './borrower.ts'
 
 export default class Book extends BookSchema {
-  @belongsTo(() => User)
+  @belongsTo(() => User, {
+    foreignKey: 'ownerId',
+    localKey: 'id',
+  })
   declare owner: BelongsTo<typeof User>
 
-  @belongsTo(() => Borrower)
+  @belongsTo(() => Borrower, {
+    foreignKey: 'borrowedBy',
+    localKey: 'id',
+  })
   declare borrower: BelongsTo<typeof Borrower>
 }
