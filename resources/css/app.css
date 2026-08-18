@@ -1,5 +1,5 @@
 :root {
-  --gray-1: oklch(98.5% 0 0);
+  /* --gray-1: oklch(98.5% 0 0);
   --gray-2: oklch(97% 0 0);
   --gray-3: oklch(92.2% 0 0);
   --gray-4: oklch(87% 0 0);
@@ -7,7 +7,54 @@
   --gray-7: oklch(43.9% 0 0);
   --gray-8: oklch(37.1% 0 0);
   --gray-10: oklch(26.9% 0 0);
-  --gray-12: oklch(14.5% 0 0);
+  --gray-12: oklch(14.5% 0 0); */
+    --primary: #99770B;
+    --on-primary: #FFFFFF;
+    --primary-container: #E6D6A2;
+    --on-primary-container: #332804;
+    --secondary: #609981;
+    --on-secondary: #FFFFFF;
+    --secondary-container: #CBE6DA;
+    --on-secondary-container: #20332B;
+    --tertiary: #999091;
+    --on-tertiary: #FFFFFF;
+    --tertiary-container: #E6E1E2;
+    --on-tertiary-container: #333030;
+    --error: #991209;
+    --on-error: #FFFFFF;
+    --error-container: #E6A6A1;
+    --on-error-container: #330603;
+    --background: #fcfcfb;
+    --on-background: #333231;
+    --surface: #fcfcfb;
+    --on-surface: #333231;
+    --surface-variant: #e6e2d8;
+    --on-surface-variant: #666253;
+    --outline: #99927d;
+    /* Dark Mode */
+    --primary-dark: #E6CF86;
+    --on-primary-dark: #4C3C05;
+    --primary-container-dark: #665007;
+    --on-primary-container-dark: #E6D6A2;
+    --secondary-dark: #C0E6D5;
+    --on-secondary-dark: #304C40;
+    --secondary-container-dark: #406656;
+    --on-secondary-container-dark: #CBE6DA;
+    --tertiary-dark: #E6DFE0;
+    --on-tertiary-dark: #4C4849;
+    --tertiary-container-dark: #666061;
+    --on-tertiary-container-dark: #E6E1E2;
+    --error-dark: #E68B85;
+    --on-error-dark: #4C0905;
+    --error-container-dark: #660C06;
+    --on-error-container-dark: #E6A6A1;
+    --background-dark: #333231;
+    --on-background-dark: #e6e5e2;
+    --surface-dark: #333231;
+    --on-surface-dark: #e6e5e2;
+    --surface-variant-dark: #666253;
+    --on-surface-variant-dark: #e6e1d2;
+    --outline-dark: #b3ae9e;
 }
 
 /* =====================
@@ -24,8 +71,8 @@ body {
   height: 100%;
   font-family: system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background: var(--gray-2);
-  color: var(--gray-10);
+  background: var(--background);
+  color: var(--on-background);
   font-size: 16px;
   line-height: 1.5;
 }
@@ -45,7 +92,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--gray-12);
+  color: var(--on-background);
 }
 
 /* Header */
@@ -67,11 +114,11 @@ header nav {
 }
 header nav a {
   font-weight: 500;
-  color: var(--gray-8);
+  color: var(--on-surface);
 }
 header nav a:hover,
 header nav a.current {
-  color: var(--gray-12);
+  color: var(--on-surface-variant);
 }
 
 /* =====================
@@ -84,8 +131,8 @@ main {
   flex-direction: column;
   justify-content: space-between;
   min-height: calc(100vh - 65px);
-  background: #fff;
-  border: 1px solid var(--gray-3);
+  background: var(--surface-variant);
+  border: 1px solid var(--outline);
 }
 
 .hero {
@@ -101,7 +148,7 @@ main {
 }
 .hero p {
   font-size: 22px;
-  color: var(--gray-7);
+  color: var(--on-surface-variant);
 }
 .hero .button {
   margin-top: 30px;
@@ -113,17 +160,17 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   padding: 0 50px;
-  border-top: 1px solid var(--gray-3);
+  border-top: 1px solid var(--outline);
 }
 .cards a {
   padding: 30px 40px;
-  border-right: 1px solid var(--gray-3);
+  border-right: 1px solid var(--outline);
 }
 .cards a:first-child {
-  border-left: 1px solid var(--gray-3);
+  border-left: 1px solid var(--outline);
 }
 .cards a:hover {
-  background: var(--gray-1);
+  background: var(--surface);
 }
 .cards h3 {
   margin-bottom: 10px;
@@ -144,16 +191,20 @@ main {
   justify-content: center;
   max-width: 400px;
   margin: auto;
+  padding: 1rem 1.1rem;
+  border-radius: 15px;
+  background-color: var(--primary-container);
 }
 .form-container h1 {
   font-size: 32px;
   letter-spacing: -0.5px;
   margin: 5px 0;
+  color: var(--on-primary-container)
 }
 .form-container p {
   font-size: 18px;
   margin-bottom: 48px;
-  color: var(--gray-6);
+  color: var(--on-primary-container);
 }
 form {
   display: flex;
@@ -172,58 +223,59 @@ button {
   width: 100%;
   border-radius: 4px;
   font: inherit;
+  background: var(--surface-variant)
 }
 input {
   height: 40px;
-  border: 1px solid var(--gray-4);
+  border: 1px solid var(--outline);
   padding: 0 16px;
 }
 input[data-invalid='true'],
 textarea[data-invalid='true'] {
-  border-color: #fb2c36;
+  border-color: var(--error);
 }
 input[data-invalid='true'] + div,
 textarea[data-invalid='true'] + div {
-  color: #fb2c36;
+  color: var(--error);
   font-size: 14px;
   font-weight: 500;
   margin-top: 2px;
 }
 
 button {
-  background: var(--gray-12);
-  color: #fff;
-  border: none;
+  color: var(--primary);
+  border: 1px solid var(--primary);
   padding: 10px;
   font-weight: 500;
 }
 button:hover {
-  background: var(--gray-10);
+  background: var(--primary);
+  color: var(--on-primary);
 }
 
 /* =====================
   Alerts 
 ===================== */
 .alert {
-  background: #fff;
+  background: var(--background);
   position: relative;
   padding: 12px 16px;
   font-size: 14px;
   min-width: 380px;
   font-weight: 500;
-  border: 1px solid var(--gray-3);
+  border: 1px solid var(--outline);
   border-radius: 10px;
   animation: scale-up 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .alert-destructive {
-  color: #fb2c36;
-  background: #fb2c361a;
-  border-color: #fb2c36;
+  color: var(--on-error-container);
+  background: var(--error-container);
+  border-color: var(--on-error-container);
 }
 .alert-success {
-  color: #00a63e;
-  background: #00a63e1a;
-  border-color: #00a63e;
+  color: var(--on-secondary-container);
+  background: var(--secondary-container);
+  border-color: var(--on-secondary-container);
 }
 .flash-container {
   position: fixed;
@@ -233,22 +285,6 @@ button:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-/* =====================
-  Books 
-===================== */
-.book-card {
-  width: 0.10 rems;
-  border: 1px solid gray;
-  padding: 10px auto;
-  display: flex;
-  flex-direction: column;  
-  align-items: center;
-}
-
-.book-card img {
-  max-width: 30%;
 }
 
 
