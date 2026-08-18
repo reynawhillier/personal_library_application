@@ -10,6 +10,9 @@
   --gray-12: oklch(14.5% 0 0);
 }
 
+/* =====================
+  Global 
+===================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -71,7 +74,9 @@ header nav a.current {
   color: var(--gray-12);
 }
 
-/* Main */
+/* =====================
+  Main 
+===================== */
 main {
   max-width: 1440px;
   margin: 0 30px;
@@ -130,7 +135,9 @@ main {
   color: var(--gray-6);
 }
 
-/* Form */
+/* =====================
+  Forms 
+===================== */
 .form-container {
   display: flex;
   flex-direction: column;
@@ -194,7 +201,9 @@ button:hover {
   background: var(--gray-10);
 }
 
-/* Alerts */
+/* =====================
+  Alerts 
+===================== */
 .alert {
   background: #fff;
   position: relative;
@@ -225,6 +234,23 @@ button:hover {
   flex-direction: column;
   align-items: center;
 }
+
+/* =====================
+  Books 
+===================== */
+.book-card {
+  width: 0.10 rems;
+  border: 1px solid gray;
+  padding: 10px auto;
+  display: flex;
+  flex-direction: column;  
+  align-items: center;
+}
+
+.book-card img {
+  max-width: 30%;
+}
+
 
 @keyframes scale-up {
   from {

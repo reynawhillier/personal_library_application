@@ -5,6 +5,13 @@ type ParamValue = string | number | bigint | boolean
 export type ScannedRoutes = {
   ALL: {
     'home': { paramsTuple?: []; params?: {} }
+    'books.index': { paramsTuple?: []; params?: {} }
+    'books.create': { paramsTuple?: []; params?: {} }
+    'books.store': { paramsTuple?: []; params?: {} }
+    'books.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'books.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'books.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'books.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'new_account.create': { paramsTuple?: []; params?: {} }
     'new_account.store': { paramsTuple?: []; params?: {} }
     'session.create': { paramsTuple?: []; params?: {} }
@@ -13,18 +20,36 @@ export type ScannedRoutes = {
   }
   GET: {
     'home': { paramsTuple?: []; params?: {} }
+    'books.index': { paramsTuple?: []; params?: {} }
+    'books.create': { paramsTuple?: []; params?: {} }
+    'books.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'books.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'new_account.create': { paramsTuple?: []; params?: {} }
     'session.create': { paramsTuple?: []; params?: {} }
   }
   HEAD: {
     'home': { paramsTuple?: []; params?: {} }
+    'books.index': { paramsTuple?: []; params?: {} }
+    'books.create': { paramsTuple?: []; params?: {} }
+    'books.show': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+    'books.edit': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
     'new_account.create': { paramsTuple?: []; params?: {} }
     'session.create': { paramsTuple?: []; params?: {} }
   }
   POST: {
+    'books.store': { paramsTuple?: []; params?: {} }
     'new_account.store': { paramsTuple?: []; params?: {} }
     'session.store': { paramsTuple?: []; params?: {} }
     'session.destroy': { paramsTuple?: []; params?: {} }
+  }
+  PUT: {
+    'books.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+  }
+  PATCH: {
+    'books.update': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
+  }
+  DELETE: {
+    'books.destroy': { paramsTuple: [ParamValue]; params: {'id': ParamValue} }
   }
 }
 declare module '@adonisjs/core/types/http' {

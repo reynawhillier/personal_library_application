@@ -4,6 +4,7 @@
  */
 
 export const controllers = {
+  Books: () => import('#controllers/books_controller'),
   NewAccount: () => import('#controllers/new_account_controller'),
   Session: () => import('#controllers/session_controller'),
 }

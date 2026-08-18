@@ -1,0 +1,8 @@
+<div class="cards">
+    @each(book in books)
+            <a href="/books/{{ book.id }}">
+                <h3> {{ book. title }} </h3>
+                <p> By {{ book.author }} </p>
+            </a>
+    @endeach
+</div>

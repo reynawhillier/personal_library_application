@@ -14,7 +14,7 @@ export const BookFactory = factory
       pageCount: faker.number.int({ min: 50, max: 1600 }),
       readStatus: faker.number.int({ min: 1, max: 3 }),
       type: faker.number.int({ min: 1, max: 4 }),
-      imgAddress: faker.image.url(),
+      imgAddress: faker.image.url({ height: 818, width: 500 }),
     }
   })
   .relation('owner', () => UserFactory)
