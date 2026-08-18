@@ -16,10 +16,10 @@
     --on-secondary: #FFFFFF;
     --secondary-container: #CBE6DA;
     --on-secondary-container: #20332B;
-    --tertiary: #999091;
+    --tertiary: #99818A;
     --on-tertiary: #FFFFFF;
-    --tertiary-container: #E6E1E2;
-    --on-tertiary-container: #333030;
+    --tertiary-container: #E6DADE;
+    --on-tertiary-container: #332B2E;
     --error: #991209;
     --on-error: #FFFFFF;
     --error-container: #E6A6A1;
@@ -40,10 +40,10 @@
     --on-secondary-dark: #304C40;
     --secondary-container-dark: #406656;
     --on-secondary-container-dark: #CBE6DA;
-    --tertiary-dark: #E6DFE0;
-    --on-tertiary-dark: #4C4849;
-    --tertiary-container-dark: #666061;
-    --on-tertiary-container-dark: #E6E1E2;
+    --tertiary-dark: #E6D5DB;
+    --on-tertiary-dark: #4C4045;
+    --tertiary-container-dark: #66565C;
+    --on-tertiary-container-dark: #E6DADE;
     --error-dark: #E68B85;
     --on-error-dark: #4C0905;
     --error-container-dark: #660C06;
@@ -64,6 +64,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Epilogue', 'Times New Roman', Times, serif
 }
 
 html,
@@ -118,7 +119,7 @@ header nav a {
 }
 header nav a:hover,
 header nav a.current {
-  color: var(--on-surface-variant);
+  color: var(--outline);
 }
 
 /* =====================
@@ -131,7 +132,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   min-height: calc(100vh - 65px);
-  background: var(--surface-variant);
+  background: var(--surface);
   border: 1px solid var(--outline);
 }
 
@@ -148,7 +149,7 @@ main {
 }
 .hero p {
   font-size: 22px;
-  color: var(--on-surface-variant);
+  color: var(--on-surface);
 }
 .hero .button {
   margin-top: 30px;
@@ -170,7 +171,8 @@ main {
   border-left: 1px solid var(--outline);
 }
 .cards a:hover {
-  background: var(--surface);
+  background: var(--surface-variant);
+  color: var(--on-surface-variant);
 }
 .cards h3 {
   margin-bottom: 10px;
@@ -179,7 +181,7 @@ main {
   letter-spacing: -0.4px;
 }
 .cards p {
-  color: var(--gray-6);
+  color: var(--on-surface);
 }
 
 /* =====================

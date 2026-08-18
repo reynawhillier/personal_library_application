@@ -21,10 +21,14 @@ export default class BooksController {
   //  */
   // async store({ request }: HttpContext) {}
 
-  // /**
-  //  * Show individual record
-  //  */
-  // async show({ params }: HttpContext) {}
+  /**
+   * Show individual record
+   */
+  async show({ params, view }: HttpContext) {
+    const book = await Book.query().where('id', params.id).firstOrFail()
+
+    return view.render('pages/collection/show', { book })
+  }
 
   // /**
   //  * Edit individual record
