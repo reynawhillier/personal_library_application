@@ -35,4 +35,10 @@ export default class User extends compose(UserSchema, withAuthFinder(hash)) {
     }
     return `${first.slice(0, 2)}`.toUpperCase()
   }
+
+  get firstName() {
+    const first = this.fullName ? this.fullName.split(' ') : this.email.split('@')
+
+    return first
+  }
 }

@@ -1,0 +1,76 @@
+@layout() 
+    <div class="form-container">
+        <div>
+            <h1>Add a book</h1>
+            <p>Input your book's information to add it to your collection</p>
+        </div>
+
+        <div>
+            @form({ route: 'books.store', method: "POST" })
+            <div>
+                @field.root({name: 'title' })
+                    @!field.label({ text: 'Title *'})
+                    @!input.control({ placeholder: 'Title'})
+                    @!field.error()        
+                @end
+            </div>
+
+            <div>
+                @field.root({name: 'author' })
+                    @!field.label({ text: 'Author *'})
+                    @!input.control({ placeholder: 'John Smith'})
+                    @!field.error()        
+                @end
+            </div>
+
+            <div>
+                @field.root({name: 'genre' })
+                    @!field.label({ text: 'Genre'})
+                    @!input.control({ placeholder: 'Fantasy'})
+                    @!field.error()        
+                @end
+            </div>
+
+            <div>
+                @field.root({name: 'isbn' })
+                    @!field.label({ text: 'ISBN'})
+                    @!input.control({ placeholder: '9000000000000'})
+                    @!field.error()        
+                @end
+            </div>
+
+            <div>
+                @field.root({name: 'pageCount' })
+                    @!field.label({ text: 'Number of Pages'})
+                    @!input.control({ placeholder: '385'})
+                    @!field.error()        
+                @end
+            </div>
+
+            <div>
+                @field.root({name: 'status' })
+                    @!field.label({ text: 'Status'})
+                    @!select.control({
+                        options: [{ name: "Not Read", value: 1}, { name: "Currently Reading", value: 2 }, { name: "Finished", valuew: 3}]
+                    }) 
+                    @!field.error()        
+                @end
+            </div>
+
+             <div>
+                @field.root({name: 'type' })
+                    @!field.label({ text: 'Format'})
+                    @!select.control({
+                        options: [{ name: "Hardcover", value: 1}, { name: "Paperback", value: 2 }, { name: "E-book", value: 3}, { name: "Audiobook", value: 4}]
+                    }) 
+                    @!field.error()        
+                @end
+            </div>
+
+            <div>
+                <button type="submit" class="button">Add Book</button>
+            </div>
+            @end
+        </div>
+    </div>
+@end

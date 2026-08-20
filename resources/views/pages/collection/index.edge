@@ -1,8 +1,10 @@
 @layout() 
 <div>
     <div class="hero">
-        <h1>My Collection</h1>
+        <h1>Reyna's Archive</h1>
         <p>This is a collection containing all the books you own.</p>
+
+        <a href="{{ route('books.create')}}" class="button"> Add a book </a>
     </div>
 
     @component('components/collection/grid', { books })

@@ -13,7 +13,7 @@ import router from '@adonisjs/core/services/router'
 
 router.on('/').render('pages/home').as('home')
 
-router.resource('books', controllers.Books)
+router.resource('books', controllers.Books).use('*', middleware.auth())
 
 router
   .group(() => {

@@ -1,0 +1,78 @@
+@layout() 
+    <div class="form-container">
+        <div>
+            <h1>Edit book</h1>
+            <p>Enter your book information below</p>
+        </div>
+
+        <div>
+            @form({ method: "PUT", route: "book.update", routeParams: { id: book.id } })
+                <div>
+                    @field.root({name: 'title' })
+                        @!field.label({ text: 'Title *'})
+                        @!input.control({ type: 'text', value: book.title })
+                        @!field.error()        
+                    @end
+                </div>
+
+                <div>
+                    @field.root({name: 'author' })
+                        @!field.label({ text: 'Author *'})
+                        @!input.control({ type="text",  value: book.author })
+                        @!field.error()        
+                    @end
+                </div>
+
+                <div>
+                    @field.root({name: 'genre' })
+                        @!field.label({ text: 'Genre'})
+                        @!input.control({ type: "text", value: book.genre})
+                        @!field.error()        
+                    @end
+                </div>
+
+                <div>
+                    @field.root({name: 'isbn' })
+                        @!field.label({ text: 'ISBN'})
+                        @!input.control({ type: "text" value: book.isbn})
+                        @!field.error()        
+                    @end
+                </div>
+
+                <div>
+                    @field.root({name: 'pageCount' })
+                        @!field.label({ text: 'Number of Pages'})
+                        @!input.control({ type: "number", value: book.pages})
+                        @!field.error()        
+                    @end
+                </div>
+
+                <div>
+                    @field.root({name: 'status' })
+                        @!field.label({ text: 'Status'})
+                        @!select.control({
+                            options: [{ name: "Not Read", value: 1}, { name: "Currently Reading", value: 2 }, { name: "Finished", valuew: 3}], 
+                            value: book.status
+                        }) 
+                        @!field.error()        
+                    @end
+                </div>
+
+                <div>
+                    @field.root({name: 'type' })
+                        @!field.label({ text: 'Format'})
+                        @!select.control({
+                            options: [{ name: "Hardcover", value: 1}, { name: "Paperback", value: 2 }, { name: "E-book", value: 3}, { name: "Audiobook", value: 4}], 
+                            value: book.type
+                        }) 
+                        @!field.error()        
+                    @end
+                </div>
+
+                <div>
+                    <button type="submit" class="button">Update Book</button>
+                </div>
+            @end
+        </div>
+    </div>
+@end
